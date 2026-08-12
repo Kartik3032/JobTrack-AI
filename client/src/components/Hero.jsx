@@ -20,12 +20,15 @@ function Hero() {
             </p>
 
             <div className="mt-10 flex gap-5">
-                <button className="bg-purple-600 hover:bg-purple-700 transition px-8 py-3 rounded-lg text-white font-semibold">
+                <button
+                    onClick={() => {
+                        document.getElementById("features")?.scrollIntoView({
+                            behavior: "smooth",
+                        });
+                    }}
+                    className="bg-purple-600 hover:bg-purple-500 transition px-8 py-3 rounded-xl text-white font-semibold shadow-lg shadow-purple-500/20"
+                >
                     Get Started
-                </button>
-
-                <button className="border border-gray-500 hover:border-purple-500 transition px-8 py-3 rounded-lg text-white">
-                    Learn More
                 </button>
             </div>
         </section>
