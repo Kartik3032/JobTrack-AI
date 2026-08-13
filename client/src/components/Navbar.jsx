@@ -3,21 +3,23 @@ import { motion } from "framer-motion";
 function Navbar() {
     return (
         <nav className="fixed top-0 left-0 w-full z-50 bg-black/60 backdrop-blur-xl border-b border-white/10">
+
             <div className="max-w-7xl mx-auto px-8 py-5 flex items-center justify-between">
 
                 {/* Logo */}
-                <motion.h1
+                <motion.a
+                    href="#home"
                     whileHover={{ scale: 1.03 }}
                     className="text-2xl font-bold text-white"
                 >
                     JobTrack <span className="text-purple-500">AI</span>
-                </motion.h1>
+                </motion.a>
 
                 {/* Links */}
                 <div className="hidden md:flex items-center gap-10 text-gray-300">
 
                     <a
-                        href="#"
+                        href="#home"
                         className="relative hover:text-white transition group"
                     >
                         Home
@@ -43,13 +45,17 @@ function Navbar() {
                 </div>
 
                 {/* CTA */}
-                <motion.button
-                    whileHover={{ scale: 1.05 }}
+                <motion.a
+                    href="#features"
+                    whileHover={{
+                        scale: 1.05,
+                        boxShadow: "0 0 25px rgba(168,85,247,0.45)",
+                    }}
                     whileTap={{ scale: 0.97 }}
-                    className="hidden md:block bg-purple-600 hover:bg-purple-500 px-5 py-2.5 rounded-xl text-white font-semibold transition shadow-lg shadow-purple-500/20"
+                    className="hidden md:block bg-purple-600 hover:bg-purple-500 px-5 py-2.5 rounded-xl text-white font-semibold transition"
                 >
                     Get Started
-                </motion.button>
+                </motion.a>
 
             </div>
         </nav>
