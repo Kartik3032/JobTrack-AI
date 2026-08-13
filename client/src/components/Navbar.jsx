@@ -1,45 +1,51 @@
+import { Sparkles, ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 
 function Navbar() {
     return (
-        <nav className="fixed top-0 left-0 w-full z-50 bg-black/60 backdrop-blur-xl border-b border-white/10">
-
-            <div className="max-w-7xl mx-auto px-8 py-5 flex items-center justify-between">
+        <nav className="fixed top-0 left-0 w-full z-50 bg-black/70 backdrop-blur-xl border-b border-white/10">
+            <div className="max-w-7xl mx-auto px-6 md:px-8 py-4 flex items-center justify-between">
 
                 {/* Logo */}
                 <motion.a
                     href="#home"
                     whileHover={{ scale: 1.03 }}
-                    className="text-2xl font-bold text-white"
+                    className="flex items-center gap-3"
                 >
-                    JobTrack <span className="text-purple-500">AI</span>
+                    <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-purple-500 to-fuchsia-500 flex items-center justify-center shadow-lg shadow-purple-500/30">
+                        <Sparkles size={21} className="text-white" />
+                    </div>
+
+                    <h1 className="text-2xl font-bold tracking-tight">
+                        JobTrack{" "}
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-fuchsia-500">
+                            AI
+                        </span>
+                    </h1>
                 </motion.a>
 
                 {/* Links */}
-                <div className="hidden md:flex items-center gap-10 text-gray-300">
+                <div className="hidden md:flex items-center gap-10 text-gray-400">
 
                     <a
                         href="#home"
-                        className="relative hover:text-white transition group"
+                        className="hover:text-white transition"
                     >
                         Home
-                        <span className="absolute -bottom-2 left-0 w-0 h-0.5 bg-purple-500 group-hover:w-full transition-all duration-300" />
                     </a>
 
                     <a
                         href="#features"
-                        className="relative hover:text-white transition group"
+                        className="hover:text-white transition"
                     >
                         Features
-                        <span className="absolute -bottom-2 left-0 w-0 h-0.5 bg-purple-500 group-hover:w-full transition-all duration-300" />
                     </a>
 
                     <a
                         href="#about"
-                        className="relative hover:text-white transition group"
+                        className="hover:text-white transition"
                     >
                         About
-                        <span className="absolute -bottom-2 left-0 w-0 h-0.5 bg-purple-500 group-hover:w-full transition-all duration-300" />
                     </a>
 
                 </div>
@@ -47,14 +53,12 @@ function Navbar() {
                 {/* CTA */}
                 <motion.a
                     href="#features"
-                    whileHover={{
-                        scale: 1.05,
-                        boxShadow: "0 0 25px rgba(168,85,247,0.45)",
-                    }}
+                    whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.97 }}
-                    className="hidden md:block bg-purple-600 hover:bg-purple-500 px-5 py-2.5 rounded-xl text-white font-semibold transition"
+                    className="hidden md:flex items-center gap-2 bg-gradient-to-r from-purple-600 to-fuchsia-500 px-6 py-3 rounded-xl text-white font-semibold shadow-lg shadow-purple-500/25"
                 >
                     Get Started
+                    <ArrowRight size={18} />
                 </motion.a>
 
             </div>

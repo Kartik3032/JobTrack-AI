@@ -1,20 +1,25 @@
+import {
+    Sparkles,
+    Target,
+    Zap,
+} from "lucide-react";
+
 import { motion } from "framer-motion";
-import { Sparkles, Target, Zap } from "lucide-react";
 
 function About() {
-    const points = [
+    const cards = [
         {
-            icon: <Sparkles size={24} />,
+            icon: <Sparkles size={25} />,
             title: "AI Powered",
             desc: "Smart tools designed to help you improve your job search.",
         },
         {
-            icon: <Target size={24} />,
+            icon: <Target size={25} />,
             title: "Career Focused",
             desc: "Stay focused on applications, interviews and your career goals.",
         },
         {
-            icon: <Zap size={24} />,
+            icon: <Zap size={25} />,
             title: "Built for Speed",
             desc: "Everything you need to manage your job hunt in one place.",
         },
@@ -23,43 +28,37 @@ function About() {
     return (
         <section
             id="about"
-            className="relative bg-black text-white py-28 px-8 overflow-hidden"
+            className="relative bg-black text-white py-28 px-6 overflow-hidden"
         >
-            {/* Background Glow */}
-            <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[300px] bg-purple-600/10 blur-[130px] rounded-full" />
 
-            <div className="relative max-w-6xl mx-auto">
+            <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[650px] h-[350px] bg-purple-700/10 blur-[130px] rounded-full pointer-events-none" />
 
-                {/* Heading */}
-                <motion.div
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6 }}
-                    viewport={{ once: true }}
-                    className="text-center mb-16"
-                >
-                    <p className="text-purple-400 font-semibold tracking-widest uppercase text-sm mb-4">
-                        About JobTrack AI
+            <div className="relative max-w-7xl mx-auto">
+
+                <div className="text-center max-w-4xl mx-auto">
+
+                    <p className="text-purple-400 font-semibold tracking-[0.25em] text-sm mb-5">
+                        ABOUT JOBTRACK AI
                     </p>
 
-                    <h2 className="text-4xl md:text-5xl font-bold">
+                    <h2 className="text-4xl md:text-6xl font-bold">
                         Your Career,{" "}
-                        <span className="text-purple-500">
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-fuchsia-500">
                             One Place.
                         </span>
                     </h2>
 
-                    <p className="text-gray-400 max-w-2xl mx-auto mt-6 text-lg leading-8">
+                    <p className="mt-7 text-lg md:text-xl text-gray-400 leading-8">
                         JobTrack AI brings job discovery, application tracking,
                         resume improvement and interview preparation together
                         into one simple platform.
                     </p>
-                </motion.div>
 
-                {/* Cards */}
-                <div className="grid md:grid-cols-3 gap-8">
+                </div>
 
-                    {points.map((point, index) => (
+                <div className="grid md:grid-cols-3 gap-8 mt-16">
+
+                    {cards.map((card, index) => (
                         <motion.div
                             key={index}
                             initial={{ opacity: 0, y: 30 }}
@@ -69,23 +68,26 @@ function About() {
                                 delay: index * 0.15,
                             }}
                             viewport={{ once: true }}
-                            className="group bg-gradient-to-br from-zinc-900 via-zinc-900 to-purple-950/20 border border-zinc-800 rounded-3xl p-8 hover:-translate-y-2 hover:border-purple-500/60 hover:shadow-[0_0_35px_rgba(168,85,247,0.15)] transition-all duration-300"
+                            className="group bg-gradient-to-br from-zinc-900 to-purple-950/20 border border-zinc-800 rounded-3xl p-10 hover:border-purple-500 hover:-translate-y-2 transition-all duration-300"
                         >
-                            <div className="w-12 h-12 flex items-center justify-center rounded-xl bg-purple-500/10 text-purple-400 border border-purple-500/20 mb-6 group-hover:bg-purple-500/20 group-hover:scale-110 transition-all duration-300">
-                                {point.icon}
+
+                            <div className="w-14 h-14 rounded-2xl bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-purple-400 mb-8 group-hover:bg-purple-500/20 group-hover:scale-110 transition">
+                                {card.icon}
                             </div>
 
-                            <h3 className="text-xl font-bold mb-3">
-                                {point.title}
+                            <h3 className="text-2xl font-bold mb-4">
+                                {card.title}
                             </h3>
 
                             <p className="text-gray-400 leading-7">
-                                {point.desc}
+                                {card.desc}
                             </p>
+
                         </motion.div>
                     ))}
 
                 </div>
+
             </div>
         </section>
     );
